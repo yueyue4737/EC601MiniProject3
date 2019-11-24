@@ -1,7 +1,7 @@
 MiniProject 3 Yue Liu
 ===
 
-Compare Mongo DB versus my SQL:
+Compare Mongo DB versus my SQL(Main)
 ===
 
 Define user stories for store the data
@@ -13,7 +13,7 @@ Define user stories for displaying the data
 Run unit test for the data module
 ---
 
-Compare REACT Native versus iOS and Android application environment
+Compare REACT Native versus iOS and Android application environment(Extra)
 ===
 
 Build example application on either iOS or Android (Same as example provided by either framework)
