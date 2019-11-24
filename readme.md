@@ -1,3 +1,6 @@
+MiniProject 3 Yue Liu
+===
+
 Compare Mongo DB versus my SQL:
 ===
 
@@ -19,8 +22,9 @@ Build example application on either iOS or Android (Same as example provided by 
 Run automated test using AWS test factory
 ---
 
-Study and demonstrate visualizations tools to be used with DSP (Javascript or Python)
+Links
 ===
 
-Pick your Topic but have a SW demo
-===
+Database:
+
+App:
