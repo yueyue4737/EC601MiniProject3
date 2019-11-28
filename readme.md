@@ -1,6 +1,6 @@
 MiniProject 3 Yue Liu
 ===
-
+do we need to use everything?
 Compare Mongo DB versus my SQL(Main)
 ===
 
