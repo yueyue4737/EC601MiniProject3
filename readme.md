@@ -1,5 +1,8 @@
-MiniProject3:Compare Mongo DB versus my SQL Yue Liu
+MiniProject3:Compare Mongo DB versus my SQL
 ===
+
+Yue Liu
+---
 
 1 Review major used database systems in cloud 
 ---
