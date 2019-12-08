@@ -3,8 +3,9 @@ from google.cloud.language import enums
 from google.cloud.language import types
 import os
 from google.oauth2 import service_account
-#export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/My First Project-77c5622a5066.json"
-credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "My First Project-77c5622a5066.json"
+# to get the credential: https://console.cloud.google.com/apis/credentials?project=poised-breaker-253116&folder&organizationId=935399055473
+#export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/My First Project-079a6734c983.json"
+credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "My First Project-079a6734c983.json"
 credentials = service_account.Credentials.from_service_account_file(credentials_path)
 
 from google.cloud import language
@@ -64,11 +65,11 @@ def get_reaction(score, magnitude):
             reaction = 'Mixed'
         else:
             reaction = 'Neutral'
-
     return reaction
 
 if __name__ == "__main__":
-    #file_to_analyze = 'tweetsV.txt'
-    file_to_analyze = 'tweetsE.txt'
-
-    analyze_text(file_to_analyze)
+# we cannot use the live stream data because of the size
+    twFile_list = ["tweet_vogue.csv", "tweet_elle.csv"]
+# so I change into the analyzed pulished data
+    for i in range(2):
+        analyze_text(twFile_list[i])
