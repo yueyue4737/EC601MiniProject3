@@ -24,7 +24,7 @@ MiniProject3:Compare Mongo DB versus my SQL Yue Liu
 ### 3.3 Convert the sentiments in Google NLP: from MySQL to Mongo
 ### 3.4 Statistics Result and Visualization for Tweets
 
-**References: READ THE .pdf REPROT & THE ISSUE
+*References: READ THE .pdf REPROT & THE ISSUE
 
 Links
 ===
