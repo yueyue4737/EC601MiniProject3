@@ -2,7 +2,6 @@ from tweepy.streaming import StreamListener # use the library to create stream l
 from tweepy import OAuthHandler # in this case, application-user
 from tweepy import Stream
 import twitter_credentials
-import sys
 
 class twStreamer():
     """
@@ -21,7 +20,10 @@ class twStreamer():
         strLive = Stream(auth, listener)
 
         # This line filter Twitter Streams to capture data by the keywords:
-        strLive.filter(track=hashTag)
+        # Streams do not terminate unless the connection is closed, blocking the thread.
+        # Tweepy offers a convenient is_async parameter on filter
+        # so the stream will run on a new thread.
+        strLive.filter(track=hashTag, is_async=True) # edit here
 
 class stdoutListener(StreamListener):
     """
@@ -44,6 +46,7 @@ class stdoutListener(StreamListener):
             print("Error on_data %s" % str(e))
         return True
 
+    # an error handling method
     def on_error(self, status):
         if status == 420:
             # Returning False on_data method in case rate limit occurs.
@@ -59,6 +62,18 @@ if __name__ == '__main__':
     twitter_streamer = twStreamer()
     for i in range(2):
         twitter_streamer.stream_tweets(twFile_list[i], hashTag_list[i])
-        with open(twFile_list[i]) as f:
-            if len(f.readlines) > 2000: # loop control, we do not want to receive all the live data like 'garbage'
-                sys.exit(0)
+# in the real life, we cannot stop the stream, 
+# but I tried the following to control the size of the file
+# option1: control by length
+#        import sys
+#        with open(twFile_list[i], 'r') as f:
+#            if len(f.readlines()) > 100:
+#                sys.exit(0)
+# option2: control by time
+# I did not find the point to control it
+#       import time
+#       start = time.time()
+#       twitter_streamer.stream_tweets(twFile_list[i], hashTag_list[i])
+#       end = time.time()
+
+## In this project, I stop the project in 1 minutes in the IDE for now :stuck_out_tongue:
