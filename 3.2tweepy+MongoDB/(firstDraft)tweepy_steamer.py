@@ -1,3 +1,4 @@
+# this is a copy from miniproject1
 from tweepy.streaming import StreamListener # use the library to create stream listener
 from tweepy import OAuthHandler # in this case, application-user
 from tweepy import Stream
