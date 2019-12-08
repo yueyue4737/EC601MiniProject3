@@ -74,8 +74,5 @@ if __name__ == '__main__':
 #       import time
 #       start = time.time()
 #       twitter_streamer.stream_tweets(twFile_list[i], hashTag_list[i])
-#       end = time.time()
-
-:stuck_out_tongue:
-        
+#       end = time.time()     
 ## In this project, I stop the project in 1 minutes in the IDE for now 
