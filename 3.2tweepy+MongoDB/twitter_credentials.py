@@ -1,5 +1,8 @@
-#copy yours in keys & token
-ACCESS_TOKEN = "1172881526079533056-exs78CpbbolSxesfUFTuLAYQW1WaMh"
-ACCESS_TOKEN_SECRET = "hTjJpUL3Db66qAzrubJvk92ZZhCO4jfDtJ2rulwGCxDv3"
-CONSUMER_KEY = "f65uZC39TbtJvH9S1RfWZTJw8"
-CONSUMER_SECRET = "CgXgKPoDi9YZWAkAjspgFUZx0YlNVsQB3lnEpnaEV3gBBXpgZ1"
+# register twitter client application(need a personal twitter account)
+# get 4 strings here: https://developer.twitter.com/en/apps
+# do not change the sequence
+# do not show to others
+KEY = ''
+KEY_SECRET = ''
+TOKEN = '' # this is a key
+TOKEN_SECRET = '' # this is a secret
