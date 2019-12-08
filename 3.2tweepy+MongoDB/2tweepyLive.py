@@ -1,43 +1,43 @@
 from tweepy.streaming import StreamListener # use the library to create stream listener
 from tweepy import OAuthHandler # in this case, application-user
 from tweepy import Stream
-
 import twitter_credentials
+import sys
 
-# # # # TWITTER STREAMER: streaming the twitters in real-time  # # # #
-class TwitterStreamer():
+class twStreamer():
     """
+    Twitter Streamer:
     Class for streaming and processing live tweets.
     """
-
     def __init__(self):
-        pass
+        pass # different here
 
-    def stream_tweets(self, fetched_tweets_filename, hash_tag_list):
+    def stream_tweets(self, twFile, hashTag):
         # This handles Twitter authetification and the connection to Twitter Streaming API
-        listener = StdOutListener(fetched_tweets_filename)
-        auth = OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
-        auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
-        stream = Stream(auth, listener)
+        listener = stdoutListener(twFile)
+        #auth = self.autr.authTwapp()
+        auth = OAuthHandler(twitter_credentials.KEY, twitter_credentials.KEY_SECRET)
+        auth.set_access_token(twitter_credentials.TOKEN, twitter_credentials.TOKEN_SECRET)
+        strLive = Stream(auth, listener)
 
         # This line filter Twitter Streams to capture data by the keywords:
+        strLive.filter(track=hashTag)
 
-        stream.filter(track=hash_tag_list)
-        #stream.filter(track=['vogue','elle'])
-
-# # # # TWITTER STREAM LISTENER # # # #
-class StdOutListener(StreamListener):
+class stdoutListener(StreamListener):
     """
+    Twitter stream listener:
     This is a basic listener that just prints received tweets to stdout.
     """
-
-    def __init__(self, fetched_tweets_filename):
-        self.fetched_tweets_filename = fetched_tweets_filename
+    # The default StreamListener can classify most common twitter messages
+    # and routes them to appropriately named methods,
+    # but these methods are only stubs.
+    def __init__(self, twFile):
+        self.twFile = twFile
 
     def on_data(self, data):
         try:
             print(data)
-            with open(self.fetched_tweets_filename, 'a') as tf:
+            with open(self.twFile, 'a') as tf:
                 tf.write(data)
             return True
         except BaseException as e:
@@ -45,15 +45,20 @@ class StdOutListener(StreamListener):
         return True
 
     def on_error(self, status):
+        if status == 420:
+            # Returning False on_data method in case rate limit occurs.
+            # The 401 Unauthorized error is an HTTP status code
+            # that means the page you were trying to access cannot be loaded
+            # until you first log in with a valid user ID and password.
+            return False
         print(status)
 
 if __name__ == '__main__':
-    # Authenticate using config.py and connect to Twitter Streaming API.
-
-    hash_tag_list = ['vogue']
-    #hash_tag_list = ['elle']
-    fetched_tweets_filename = "tweetsV_live.txt"
-    #fetched_tweets_filename = "tweetsE_live.txt"
-
-    twitter_streamer = TwitterStreamer()
-    twitter_streamer.stream_tweets(fetched_tweets_filename, hash_tag_list)
+    hashTag_list = ['vogue', 'elle']
+    twFile_list = ["tweets_vogue_live.txt", "tweets_elle_live.txt"]
+    twitter_streamer = twStreamer()
+    for i in range(2):
+        twitter_streamer.stream_tweets(twFile_list[i], hashTag_list[i])
+        with open(twFile_list[i]) as f:
+            if len(f.readlines) > 2000: # loop control, we do not want to receive all the live data like 'garbage'
+                sys.exit(0)
