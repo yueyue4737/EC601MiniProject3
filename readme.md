@@ -29,5 +29,5 @@ Compare Mongo DB versus my SQL Yue Liu
 Links
 ===
 
-Database:
+MiniProject3(GoogleDocs):
 https://docs.google.com/document/d/16QcWpQQAjGRBR2D5RS91LO-QobxsKP3WgXyfDvgBHZc/edit?usp=sharing
