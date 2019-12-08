@@ -43,7 +43,6 @@ class TwitterClient():
 
 # # # # TWITTER AUTHENTICATER # # # #
 class TwitterAuthenticator():
-
     def authenticate_twitter_app(self):
         auth = OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
         auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
@@ -55,7 +54,6 @@ class TwitterStreamer():
     """
     Class for streaming and processing live tweets.
     """
-
     def __init__(self):
         self.twitter_autenticator = TwitterAuthenticator()
 
@@ -64,7 +62,6 @@ class TwitterStreamer():
         listener = TwitterListener(fetched_tweets_filename)
         auth = self.twitter_autenticator.authenticate_twitter_app()
         stream = Stream(auth, listener)
-
         # This line filter Twitter Streams to capture data by the keywords:
         stream.filter(track=hash_tag_list)
 
@@ -74,7 +71,6 @@ class TwitterListener(StreamListener):
     """
     This is a basic listener that just prints received tweets to stdout.
     """
-
     def __init__(self, fetched_tweets_filename):
         self.fetched_tweets_filename = fetched_tweets_filename
 
@@ -94,12 +90,10 @@ class TwitterListener(StreamListener):
             return False
         print(status)
 
-
 class TweetAnalyzer():
     """
     Functionality for analyzing and categorizing content from tweets.
     """
-
     def tweets_to_data_frame(self, tweets):
         df = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['Tweets'])
 
@@ -109,26 +103,24 @@ class TweetAnalyzer():
         df['source'] = np.array([tweet.source for tweet in tweets])
         df['likes'] = np.array([tweet.favorite_count for tweet in tweets])
         df['retweets'] = np.array([tweet.retweet_count for tweet in tweets])
-
         return df
 
-
 if __name__ == '__main__':
+    # the classes are coming from the tutorial, 
+    # even if I add sufficient comments to show my understanding
+    # I cannot make sure the success of the program
     twitter_client = TwitterClient()
     tweet_analyzer = TweetAnalyzer()
-
     api = twitter_client.get_twitter_client_api()
-
-    # select one at a time
     tweets = api.user_timeline(screen_name="voguemagazine", count=21)
-    # tweets = api.user_timeline(screen_name="ELLEmagazine", count=21)
-
-    # print(dir(tweets[0]))
-    # print(tweets[0].retweet_count)
-
     df = tweet_analyzer.tweets_to_data_frame(tweets)
-
     print(df.head(10))
+    df.to_csv("tweet_vogue.csv")
 
-    df.to_csv("tweetV.csv")
-    # df.to_csv("tweetE.csv")
+    twitter_client1 = TwitterClient()
+    tweet_analyzer1 = TweetAnalyzer()
+    api1 = twitter_client.get_twitter_client_api()
+    tweets = api.user_timeline(screen_name="ELLEmagazine", count=21)
+    df = tweet_analyzer.tweets_to_data_frame(tweets)
+    print(df.head(10))
+    df.to_csv("tweet_elle.csv")
