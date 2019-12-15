@@ -46,6 +46,12 @@ Compare Mongo DB versus my SQL Yue Liu
 
 *References: READ THE .pdf REPROT & THE ISSUE
 
+Notes: no need to store images
+===
+
+<p> It is not properly matched the goal of this project. <p>
+<p> For more inforation, see: https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql<p>
+
 Links
 ===
 
