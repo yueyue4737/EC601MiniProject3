@@ -44,17 +44,31 @@ Compare Mongo DB versus my SQL Yue Liu
 
 #### 3.4.2 Time Seires Analysis: for the large-scale research
 
+![All Text](https://github.com/yueyue4737/EC601MiniProject3/blob/master/Img/ts0.png)
+
+![All Text](https://github.com/yueyue4737/EC601MiniProject3/blob/master/Img/ts4.png)
+
 *References: READ THE .pdf REPROT & THE ISSUE
 
 Notes: 
 ===
 
-### 1 no need to store images
+### 1 no need to do complicated design
+<p> I did database design in my specialization courses. In this miniproject, there is no need to use all the commands, because our goal is to store at the very beginning part. <p>
+
+### 2 no need to store images
 <p> It is not properly matched the goal of this project. <p>
 <p> For more inforation, see: https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql<p>
  
-### 2 time series analysis
+### 3 time series analysis
 <p> I can do it by using R or MS excel, for consistensy, pandas is applied in this project. <p>
+ 
+### 4 error handling in twitter API
+<p> I finished the first few drafts very early, but error code '89' appeared again and again. It is successfully only after putting all the code in one .py file. For now, I am thinking about server issue. <p>
+ 
+<p> For more information, see: https://developer.twitter.com/en/docs/basics/response-codes <p>
+ 
+<p> BE CAREFUL: there is a slightly difference between error code and response code! <p>
 
 Links
 ===
