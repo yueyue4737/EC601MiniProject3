@@ -7,6 +7,7 @@ Compare Mongo DB versus my SQL Yue Liu
 <p> To store tweets in the mini project1, it is necessary to use the database. SQL(structured query language) is efficient to reach the target record. <p> 
 
 <p> The usage of database system in cloud(except MySQL and MongoDB) <p>
+ 
 ![All Text](https://github.com/yueyue4737/EC601MiniProject3/blob/master/Img/Product.png)
 
 2 What is the difference between them?
@@ -14,6 +15,7 @@ Compare Mongo DB versus my SQL Yue Liu
 
 ![All Text](https://github.com/yueyue4737/EC601MiniProject3/blob/master/Img/Mysql_mongo.png)
 <p> Basically, it is about SQL and NoSQL, the MySQL and MongoDB. <p>
+  
 ![All Text](https://github.com/yueyue4737/EC601MiniProject3/blob/master/Img/Concept.png)
 
 3 Implementation
