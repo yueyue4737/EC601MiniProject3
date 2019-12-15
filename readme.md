@@ -7,11 +7,15 @@ Compare Mongo DB versus my SQL Yue Liu
 <p> To store tweets in the mini project1, it is necessary to use the database. SQL(structured query language) is efficient to reach the target record. <p> 
 
 <p> The usage of database system in cloud(except MySQL and MongoDB) <p>
+![All Text]()
 
 2 What is the difference between them?
 ---
+
+![All Text]()
 <p> Basically, it is about SQL and NoSQL, the MySQL and MongoDB. <p>
-  
+![All Text]()
+
 3 Implementation
 ---
 <p> Requirements:
@@ -28,12 +32,16 @@ Compare Mongo DB versus my SQL Yue Liu
 <p> (1) We are collecting the live tweets about Vogue and Elle;
     (2) To store the live tweets in mongoDB, we are converting them into a proper format. <p>
       
-### 3.3 double check the sentiments data in Google NLP: from MySQL to Mongo(.csv)
+### 3.3 Double check the sentiments data in Google NLP: from MySQL to Mongo(.csv)
 <p> (1) Google NLP: track the sentiment of two files;
     (2) set the user_id as the primary key;
     (3) import the .csv file into a NoSQL DB. <p>
       
 ### 3.4 Statistics Result and Visualization for Tweets
+
+#### 3.4.1 Histogram: for a small size dataset
+
+#### 3.4.2 Time Seires Analysis: for the large-scale research
 
 *References: READ THE .pdf REPROT & THE ISSUE
 
