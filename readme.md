@@ -20,24 +20,23 @@ Compare Mongo DB versus my SQL Yue Liu
 
 3 Implementation
 ---
-<p> Requirements:
-(1) Define user stories for store the data;
-(2) Define user stories for displaying the data;
-(3) Run unit test for the data module.
-<p>
+<p> Requirements: <p>
+<p> (1) Define user stories for store the data; <p>
+<p> (2) Define user stories for displaying the data; <p>
+<p> (3) Run unit test for the data module. <p>
   
 ### 3.1 Twitter API+MySQL: track and store published tweets(.csv)
-<p> (1) We are collecting the tweets about Vogue and Elle in a 10 columns table seperately; 
-    (2) Be familiar with the basic usage of MySQL community server. <p>
+<p> (1) We are collecting the tweets about Vogue and Elle in a 10 columns table seperately; <p>
+<p> (2) Be familiar with the basic usage of MySQL community server. <p>
       
 ### 3.2 Twitter API+MongoDB: track and store the live stream tweets(.txt/.json)
-<p> (1) We are collecting the live tweets about Vogue and Elle;
-    (2) To store the live tweets in mongoDB, we are converting them into a proper format. <p>
+<p> (1) We are collecting the live tweets about Vogue and Elle; <p>
+<p> (2) To store the live tweets in mongoDB, we are converting them into a proper format. <p>
       
 ### 3.3 Double check the sentiments data in Google NLP: from MySQL to Mongo(.csv)
-<p> (1) Google NLP: track the sentiment of two files;
-    (2) set the user_id as the primary key;
-    (3) import the .csv file into a NoSQL DB. <p>
+<p> (1) Google NLP: track the sentiment of two files; <p>
+<p> (2) set the user_id as the primary key; <p>
+<p> (3) import the .csv file into a NoSQL DB. <p>
       
 ### 3.4 Statistics Result and Visualization for Tweets
 
