@@ -46,11 +46,15 @@ Compare Mongo DB versus my SQL Yue Liu
 
 *References: READ THE .pdf REPROT & THE ISSUE
 
-Notes: no need to store images
+Notes: 
 ===
 
+### 1 no need to store images
 <p> It is not properly matched the goal of this project. <p>
 <p> For more inforation, see: https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql<p>
+ 
+### 2 time series analysis
+<p> I can do it by using R or MS excel, for consistensy, pandas is applied in this project. <p>
 
 Links
 ===
