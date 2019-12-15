@@ -1,4 +1,4 @@
-Compare Mongo DB versus my SQL Yue Liu
+Compare Mongo DB versus my SQL Yue Liu :star:
 ===
 
 1 Review major used database systems in cloud 
@@ -24,7 +24,8 @@ Compare Mongo DB versus my SQL Yue Liu
 <p> (1) Define user stories for store the data; <p>
 <p> (2) Define user stories for displaying the data; <p>
 <p> (3) Run unit test for the data module. <p>
-  
+<p> tools: `MySQL server` & `MySQL Workbranch` & `MongodDB server`<p>
+ 
 ### 3.1 Twitter API+MySQL: track and store published tweets(.csv)
 <p> (1) We are collecting the tweets about Vogue and Elle in a 10 columns table seperately; <p>
 <p> (2) Be familiar with the basic usage of MySQL community server. <p>
@@ -42,7 +43,9 @@ Compare Mongo DB versus my SQL Yue Liu
 
 #### 3.4.1 Histogram: for a small size dataset
 
-#### 3.4.2 Time Seires Analysis: for the large-scale research
+<p> Although it is a common way to calculate the statistical result, I don’t think it make full use of the timeline functions in tweepy, which is the core operations of these two projects. <p> 
+
+#### 3.4.2 Time Seires Analysis: for the large-scale research(pandas)
 
 ![All Text](https://github.com/yueyue4737/EC601MiniProject3/blob/master/Img/ts0.png)
 
@@ -69,6 +72,8 @@ Notes:
 <p> For more information, see: https://developer.twitter.com/en/docs/basics/response-codes <p>
  
 <p> BE CAREFUL: there is a slightly difference between error code and response code! <p>
+ 
+### 5 for more details, see the .pdf report
 
 Links
 ===
